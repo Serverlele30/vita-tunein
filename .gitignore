@@ -1,0 +1,6 @@
+*.bak
+*.bak2
+*.vorpatch
+__pycache__/
+*.pyc
+dumps/

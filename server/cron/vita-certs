@@ -1,0 +1,4 @@
+# Verlaengerung der Vita-Zertifikate (ttv/ytv/tin) im NPM-Container
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+17 4 * * * root for c in ttv-rsa ytv-rsa tin-rsa; do docker exec npm-npm-1 certbot renew --quiet --cert-name "$c" --deploy-hook "nginx -s reload"; done >> /var/log/vita-certs.log 2>&1
